@@ -12,25 +12,32 @@ export class RegisterComponent implements OnInit {
   $id: string;
   uname: string;
   password: string;
+  confirmPassword: string;
   email: string;
   profile: string;
   profilePic?: string;
   memes?: string[];
   bio?: string;
-  constructor(private uservice: UserService) { }
+  passNoMatch: boolean;
+  constructor(private uservice: UserService) {
+    this.passNoMatch = false;
+   }
 
   ngOnInit() {
   }
 
   submitUser({value, valid}: {value: User, valid: boolean}) {
     if(valid) {
-      this.uservice.addUser(value).then(suc => {
-
-      })
-      .catch(error => {
-        console.log('There was an error creating the user: ', error);
-      });
-
+      if(value.password === this.confirmPassword) {
+        let temp = {
+          uname: value.uname,
+          password: value.password,
+          email: value.email
+        }
+        this.uservice.addUser(temp);
+      } else {
+        this.passNoMatch = true;
+      }
     } else {
       console.log('User submit form was invalid');
     }

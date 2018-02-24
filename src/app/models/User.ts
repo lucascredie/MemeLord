@@ -3,7 +3,6 @@ export interface User {
   uname: string;
   password: string;
   email: string;
-  profile: string;
   profilePic?: string;
   memes?: string[];
   bio?: string;

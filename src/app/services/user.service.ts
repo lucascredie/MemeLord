@@ -10,11 +10,9 @@ userCol: AngularFirestoreCollection<User>;
 users: Observable<User[]>;
 user: Observable<User>;
 
-  constructor(private afs: AngularFirestore) { }
-
-  NgOninit() {
+  constructor(private afs: AngularFirestore) {
     this.userCol = this.afs.collection('users');
-  }
+   }
 
   getUsers (): Observable<User[]> {
     let users = this.userCol.snapshotChanges().map(actions => {
@@ -42,14 +40,14 @@ user: Observable<User>;
   }
 
   addUser(newUser: User) {
-     let p =this.userCol.add(newUser)
-     .then( docref => {
-        return docref;
-     })
-     .catch(error => {
-       console.log('Error during add user: ', error);
-     });
-     return p;
+     this.userCol.add(newUser);
+    //  .then( docref => {
+    //     return docref;
+    //  })
+    //  .catch(error => {
+    //    console.log('Error during add user: ', error);
+    //  });
+    //  return p;
 
   }
 
