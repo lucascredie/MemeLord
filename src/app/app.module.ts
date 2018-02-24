@@ -24,7 +24,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'meme-lord'),
-    AngularFireModule,
+    AngularFirestoreModule,
     RoutingModule
   ],
   providers: [
