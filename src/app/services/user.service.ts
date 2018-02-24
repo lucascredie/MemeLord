@@ -39,6 +39,16 @@ user: Observable<User>;
         return toReturn;
   }
 
+  getUserDoc(id: string): Observable<User>{
+    let fetched = this.userCol.doc(id).snapshotChanges()
+    .map( change => {
+      const data = change.payload.data() as User;
+      const $id = change.payload.id;
+      return {$id, ...data};
+    });
+      return fetched;
+  }
+
   addUser(newUser: User) {
      this.userCol.add(newUser);
     //  .then( docref => {

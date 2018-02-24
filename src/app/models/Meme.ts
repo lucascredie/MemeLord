@@ -1,5 +1,5 @@
 export interface Meme {
-  id?: string;
+  $id?: string;
   name?: string;
   url?: string;
   upvotes?: number;

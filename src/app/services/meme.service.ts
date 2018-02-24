@@ -21,7 +21,7 @@ export class MemeService {
   success: Promise<boolean>;
   recentUploadURL: string;
 
-  constructor(private fireStorage: AngularFireStorage, private afs: AngularFirestore) {
+  constructor(private fireStorage: AngularFireStorage, private afs: AngularFirestore, private userve: UserService) {
     this.success = null;
     this.recentUploadURL = '';
 
@@ -31,17 +31,40 @@ export class MemeService {
     this.memeCol = this.afs.collection('memes');
   }
 
-   upload(path, file): Observable<string> {
+   upload(path, file, id){
     // Upload image to storage
     const uploadfile = file;
     const uploadPath = path;
     let _url = '';
     const task = this.fireStorage.upload(path, file);
-    return task.downloadURL();
+    task.downloadURL().subscribe(url => {
+      let temp = {
+        name: file,
+        url: url
+      }
+      this.addMeme(temp);
+      this.userve.getUserDoc(id).subscribe(user => {
+        user.memes.push(temp);
+      });
+    });
   }
 
   addMeme(newMeme: Meme) {
     this.memeCol.add(newMeme);
+  }
+
+  getMemeByURL(url) {
+    let fetchedRef = this.afs
+    .collection('users', ref => ref.where('url', '==', url));
+
+    let toReturn = fetchedRef.snapshotChanges().map( changes => {
+      return changes.map( action => {
+        const data = action.payload.doc.data() as Meme;
+        const $id = action.payload.doc.id;
+        return {$id, ...data};
+      });
+    });
+    return toReturn;
   }
 
 

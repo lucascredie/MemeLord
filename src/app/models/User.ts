@@ -1,9 +1,10 @@
+import { Meme } from './Meme';
 export interface User {
   $id?: string;
   uname?: string;
   password?: string;
   email?: string;
   profilePic?: string;
-  memes?: string[];
+  memes?: Meme[];
   bio?: string;
 }
