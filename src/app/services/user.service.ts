@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { User } from '../models/User';
 import { Profile } from '../models/Profile';
 import { Observable } from 'rxjs/Observable';
@@ -42,7 +42,15 @@ user: Observable<User>;
   }
 
   addUser(newUser: User) {
-    this.userCol.add(newUser);
+     let p =this.userCol.add(newUser)
+     .then( docref => {
+        return docref;
+     })
+     .catch(error => {
+       console.log('Error during add user: ', error);
+     });
+     return p;
+
   }
 
 

@@ -1,5 +1,5 @@
 export interface User {
-  $id: string;
+  $id?: string;
   uname: string;
   password: string;
   email: string;
