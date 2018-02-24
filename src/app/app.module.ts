@@ -2,6 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { RoutingModule } from './routing.module'
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
@@ -18,7 +20,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'meme-lord'),
-    AngularFireModule
+    AngularFireModule,
+    RoutingModule
   ],
   providers: [
     UserService,
