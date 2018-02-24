@@ -14,13 +14,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserService } from './services/user.service';
 import { MemeService } from './services/meme.service';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
