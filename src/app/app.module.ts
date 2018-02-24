@@ -8,6 +8,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
+import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserService } from './services/user.service';
 import { MemeService } from './services/meme.service';
 import { AppComponent } from './app.component';
@@ -15,7 +17,9 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
