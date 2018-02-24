@@ -25,7 +25,7 @@ user: Observable<User>;
     return users;
   }
 
-  getUser(uname) {
+  getUser(uname): Observable<User[]> {
     let fetchedRef = this.afs
         .collection('users', ref => ref.where('uname', '==', uname));
 

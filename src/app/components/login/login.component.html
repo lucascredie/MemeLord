@@ -1,39 +1,38 @@
-<!-- 
-  
+<!--
+
  -->
 
 
- <form class="" #newUserForm="ngForm">
+ <form class="">
     <!-- animated fadeIn? -->
           <div class="container">
-       
+
             <h1>Log In</h1>
              <hr>
            <div>
-    
-              
-             <label> Username 
-             <input 
-                ngModel
-                 type="text" 
+
+
+             <label> Username
+             <input
+                [(ngModel)]="enteredUname"
+                 type="text"
                 class="field"
-                name="uname"
+                name="enteredUname"
              ><i class="fa fa-check-square " id="myCheck1"></i>
              </label>
-             
-             <label> Password 
-             <input 
-              ngModel 
-              type="password" 
+
+             <label> Password
+             <input
+             [(ngModel)]="enteredPassword"
+              type="password"
               class="field"
-              name="password"
-             > <i class="fa fa-check-square" id="myCheck2"></i> 
+              name="enteredPassword"
+             > <i class="fa fa-check-square" id="myCheck2"></i>
              </label>
-             
-             <input type="submit" id="sub" value="Sign Up">
-             
+
+             <button type="submit" id="sub" value="Sign Up" (click)="userAuth()">Sign Up</button>
+
            </div>
             </div>
-    
+
         </form>
-      

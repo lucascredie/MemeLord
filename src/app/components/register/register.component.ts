@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
           email: value.email
         }
         this.uservice.addUser(temp);
+        this.form.resetForm();
       } else {
         this.passNoMatch = true;
       }
