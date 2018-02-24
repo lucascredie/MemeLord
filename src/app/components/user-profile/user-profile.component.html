@@ -1,3 +1,29 @@
-<p>
-  user-profile works!
-</p>
+<aside class="sidebar"  >
+    <div class="icon-block-lg right-al">
+        <span class="material-icons sidebar-icon" [class.rotate]="!isOpen">navigate_before</span>
+     </div>
+     <!-- routerLinkActiveOptions is used so the first item is not always active by default -->
+     <div class="icon-block-lg" routerLink="/" [routerLinkActive]="['isActive']" [routerLinkActiveOptions]="{exact: true}">
+        <span class="material-icons sidebar-icon">equalizer</span> <h4 class="icon-description" [class.hide]="!isOpen">Dashboard</h4>
+     </div>
+
+     <div class="icon-block-lg" routerLink="/events" [routerLinkActive]="['isActive']">
+         <span class="material-icons sidebar-icon">event_available</span> <h4 class="icon-description" [class.hide]="!isOpen">Events</h4>
+      </div>
+
+      <div class="icon-block-lg" routerLink="/newsfeed" [routerLinkActive]="['isActive']">
+         <span class="material-icons sidebar-icon">textsms</span> <h4 class="icon-description" [class.hide]="!isOpen">News Feed</h4>
+      </div>
+
+      <div class="icon-block-lg" routerLink="/reports" [routerLinkActive]="['isActive']">
+         <span class="material-icons sidebar-icon">description</span> <h4 class="icon-description" [class.hide]="!isOpen">Yearly Report</h4>
+      </div>
+
+      <div class="icon-block-lg" routerLink="/staff" [routerLinkActive]="['isActive']">
+        <span class="material-icons sidebar-icon">group</span> <h4 class="icon-description" [class.hide]="!isOpen">Staff</h4>
+     </div>
+
+      <div class="icon-block-lg">
+         <span class="material-icons sidebar-icon">help_outline</span> <h4 class="icon-description" [class.hide]="!isOpen">Tutorial</h4>
+      </div>
+</aside>

@@ -15,6 +15,7 @@ import { UserService } from './services/user.service';
 import { MemeService } from './services/meme.service';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     RegisterComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
