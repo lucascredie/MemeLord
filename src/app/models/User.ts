@@ -6,5 +6,5 @@ export interface User {
   profile: string;
   profilePic?: string;
   memes?: string[];
-  bio?: string[];
+  bio?: string;
 }

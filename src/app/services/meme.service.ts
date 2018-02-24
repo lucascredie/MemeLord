@@ -1,5 +1,5 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireStorage, AngularFireUploadTask} from 'angularfire2/storage';
@@ -16,16 +16,19 @@ import { UserService } from './user.service';
 @Injectable()
 export class MemeService {
   uploadModel: Meme;
-  imageCollection: AngularFirestoreCollection<Meme>;
+  memeCol: AngularFirestoreCollection<Meme>;
   images: Observable<Meme[]>;
   success: Promise<boolean>;
   recentUploadURL: string;
 
   constructor(private fireStorage: AngularFireStorage, private afs: AngularFirestore) {
-    this.imageCollection = this.afs.collection('images');
     this.success = null;
     this.recentUploadURL = '';
 
+  }
+
+  NgOnInit() {
+    this.memeCol = this.afs.collection('memes');
   }
 
    upload(path, file): Observable<string> {
@@ -36,4 +39,10 @@ export class MemeService {
     const task = this.fireStorage.upload(path, file);
     return task.downloadURL();
   }
+
+  addMeme(newMeme: Meme) {
+    this.memeCol.add(newMeme);
+  }
+
+
 }
