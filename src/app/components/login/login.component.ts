@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(private userve: UserService, private router: Router) {
     this.enteredUname = '';
     this.enteredPassword = '';
+    this.incorrectUser = false;
+    this.incorrectPass = false;
   }
 
   ngOnInit() {
@@ -24,8 +26,12 @@ export class LoginComponent implements OnInit {
     this.userve.getUser(this.enteredUname).subscribe(user => {
       if (user) {
         if (this.enteredPassword === user[0].password) {
-          this.router.navigate(['/user/']);
+          this.router.navigate(['/user/{{ user[0].id }}']);
+        } else {
+          this.incorrectPass = true;
         }
+      } else {
+        this.incorrectUser = true;
       }
     });
   }
