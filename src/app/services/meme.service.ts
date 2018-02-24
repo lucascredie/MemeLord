@@ -45,6 +45,7 @@ export class MemeService {
       this.addMeme(temp);
       this.userve.getUserDoc(id).subscribe(user => {
         user.memes.push(temp);
+        this.userve.updateUser(user);
       });
     });
   }

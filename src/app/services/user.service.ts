@@ -61,5 +61,11 @@ user: Observable<User>;
 
   }
 
+  updateUser(user) {
+    this.userCol.doc(user.$id).set({
+      memes: user.memes
+    })
+  }
+
 
 }
