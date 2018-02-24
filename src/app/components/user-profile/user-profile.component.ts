@@ -12,6 +12,7 @@ import { UserService } from '../../services/user.service';
 export class UserProfileComponent implements OnInit {
 
   userId: string;
+  percent: number = 83;
 
   user: User = {
     $id: "",

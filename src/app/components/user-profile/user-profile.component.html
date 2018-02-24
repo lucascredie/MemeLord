@@ -1,4 +1,12 @@
 <aside class="sidebar"  >
-  <img id="profilePicture" src="https://firebasestorage.googleapis.com/v0/b/meme-lord-fb9a1.appspot.com/o/userPlaceHolder.jpg?alt=media&token=52091ae9-ca09-4b66-b72a-7e4b5e548803" alt="">
+  <img id="profilePicture" src="{{user.profilePic}}" alt="">
   <h1 id="username">{{user.uname}}</h1>
+
+  <div id='rankSection'>
+    <p class="percent">{{percent}}% Dankness</p>
+    <p class="rank">Rank: Meme Master</p>
+  </div>
+
+  <p id="bio">"{{user.bio}}"</p>
+  <button id="uploadMeme"> Upload Meme </button>
 </aside>

@@ -1,9 +1,20 @@
+#rankSession p {
+    text-align: center;
+}
 #username {
     text-align: center;
     font-weight: 200;
 }
 
+.percent {
+    text-align: center;
+}
+.rank {
+    text-align: center; 
+}
+
 #profilePicture {
+    object-fit: cover;
     display: block;
     margin: 20px auto;
     width: 150px;
@@ -29,3 +40,30 @@
     padding-top: 55px;
    
 }
+
+#bio {
+    font-family: 100;
+    font-size: 12px;
+    font-style: italic;
+    padding: 15px;
+    text-align: center;
+}
+
+#uploadMeme {
+    display: block;
+    margin: 20px auto;
+    height: 60px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    /* background: #f4bf42; */
+    background: #ff6868;
+    color: white;
+    border-radius: 4px;
+    transition: 200ms;
+    border: none;
+  }
+  
+  #uploadMeme:hover {
+  transform: translateY(-5px);
+  transition: 200ms;
+  }
