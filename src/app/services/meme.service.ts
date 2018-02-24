@@ -17,7 +17,7 @@ import { UserService } from './user.service';
 export class MemeService {
   uploadModel: Meme;
   memeCol: AngularFirestoreCollection<Meme>;
-  images: Observable<Meme[]>;
+  memes: Observable<Meme[]>;
   success: Promise<boolean>;
   recentUploadURL: string;
 
@@ -66,6 +66,17 @@ export class MemeService {
       });
     });
     return toReturn;
+  }
+
+  getMemes() {
+    this.memes = this.memeCol.snapshotChanges().map( changes => {
+      return changes.map( action => {
+        const data = action.payload.doc.data() as Meme;
+        const $id = action.payload.doc.id;
+        return {$id, ...data};
+      });
+    });
+    return this.memes;
   }
 
 
