@@ -32,8 +32,8 @@ user: Observable<User>;
         let toReturn = fetchedRef.snapshotChanges().map( changes => {
           return changes.map( action => {
             const data = action.payload.doc.data() as User;
-            const id = action.payload.doc.id;
-            return {id, ...data};
+            const $id = action.payload.doc.id;
+            return {$id, ...data};
           });
         });
         return toReturn;

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.userve.getUser(this.enteredUname).subscribe(user => {
       if (user) {
         if (this.enteredPassword === user[0].password) {
-          this.router.navigate(['/user/{{ user[0].id }}']);
+          this.router.navigate(['/user/'+user[0].$id]);
         } else {
           this.incorrectPass = true;
         }
