@@ -1,3 +1,46 @@
-<p>
-  register works!
-</p>
+<!-- 
+  
+ -->
+
+
+    <form class="" #newUserForm="ngForm">
+<!-- animated fadeIn? -->
+      <div class="container">
+   
+        <h1>Sign Up</h1>
+         <hr>
+       <div>
+
+          <label> Email 
+              <input 
+              ngModel
+              type="text" 
+              class="field"
+              name="email"
+              ><i class="fa fa-check-square " id="myCheck1"></i>
+          </label>
+         
+         <label> Username 
+         <input 
+          ngModel
+             type="text" 
+            class="field"
+              name="uname"
+         ><i class="fa fa-check-square " id="myCheck1"></i>
+         </label>
+         
+         <label> Password 
+         <input type="password" class="field"> <i class="fa fa-check-square" id="myCheck2"></i> 
+         </label>
+         
+         <label> Confirm Password 
+         <input type="password" class="field">  <i class="fa fa-check-square" id="myCheck3"></i>
+         </label>
+         
+         <input type="submit" id="sub" value="Sign Up">
+         
+       </div>
+        </div>
+
+    </form>
+  

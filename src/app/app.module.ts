@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
+import { FormsModule } from "@angular/forms";
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserService } from './services/user.service';
@@ -25,7 +26,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'meme-lord'),
     AngularFirestoreModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [
     UserService,

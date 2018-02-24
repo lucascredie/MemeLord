@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  appName:String = "Meme King";
+  appName:String = "Meme Lord";
 
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }
