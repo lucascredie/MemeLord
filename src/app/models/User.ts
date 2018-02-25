@@ -5,6 +5,6 @@ export interface User {
   password?: string;
   email?: string;
   profilePic?: string;
-  memes?: Meme[];
+  memes?: string[];
   bio?: string;
 }
