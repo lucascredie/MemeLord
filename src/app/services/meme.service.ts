@@ -28,9 +28,6 @@ export class MemeService {
 
   }
 
-  NgOnInit() {
-    
-  }
 
    upload(path, file, id){
     // Upload image to storage
@@ -78,6 +75,16 @@ export class MemeService {
       });
     });
     return this.memes;
+  }
+
+  getMemesById(id: string): Observable<Meme>{
+    let fetched = this.memeCol.doc(id).snapshotChanges()
+    .map( change => {
+      const data = change.payload.data() as Meme;
+      const $id = change.payload.id;
+      return {$id, ...data};
+    });
+      return fetched;
   }
 
 
