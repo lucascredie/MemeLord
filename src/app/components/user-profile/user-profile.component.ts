@@ -33,7 +33,7 @@ export class UserProfileComponent implements OnInit {
       console.log(this.user);
       for ( let meme of this.user.memes) {
         this.memeserve.getMemesById(meme).subscribe(meme => {
-          this.userMemes.push(meme.url);
+          this.userMemes.push(meme);
         })
       }
     });
