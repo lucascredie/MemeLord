@@ -56,6 +56,19 @@ input {
   color: #dddddd;
 }
 
+#seeMore {
+
+  margin: 20px auto;
+  height: 60px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  /* background: #f4bf42; */
+  background: #ff6868;
+  color: white;
+  border-radius: 4px;
+  transition: 200ms;
+}
+
 
 
 #sub {

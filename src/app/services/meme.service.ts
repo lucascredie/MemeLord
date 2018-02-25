@@ -24,11 +24,12 @@ export class MemeService {
   constructor(private fireStorage: AngularFireStorage, private afs: AngularFirestore, private userve: UserService) {
     this.success = null;
     this.recentUploadURL = '';
+    this.memeCol = this.afs.collection('memes');
 
   }
 
   NgOnInit() {
-    this.memeCol = this.afs.collection('memes');
+    
   }
 
    upload(path, file, id){

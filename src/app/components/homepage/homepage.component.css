@@ -1,0 +1,21 @@
+.votes{ 
+    margin: 20px 0px;
+    /* height: 50px; */
+    font-size: 1.3em;
+    text-transform: uppercase;
+    /* background: #f4bf42; */
+    /* background: #ff6868; */
+    color: #4f4f4f;
+    border-radius: 4px;
+    transition: 200ms;
+}
+.meme {
+    width: 360px;
+    margin: 5px auto;
+}
+
+.image {
+    object-fit: cover;
+    width: 360px;
+}
+
